@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gridwork - Positioning</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link href="css/prism.css" rel="stylesheet" />
+
+</head>
+
+<body class="app">
+    <div class="grid cols-12 fixed-xl">
+        <header class="span-full bg-secondary p-5">
+            <img src="img/logo.png" alt="gridwork logo" />
+            GridWork - A CSS Grid Based CSS Framework.
+        </header>
+        <nav class='span-2 bg-light mr-2'>
+            <ul class=''>
+                <li><a href="index.html">Grid</a></li>
+                <li><a href="fonts.html">Fonts</a></li>
+                <li><a href="spacing.html">Spacing</a></li>
+                <li><a href="positioning.html">Positioning</a></li>
+            </ul>
+        </nav>
+        <div class='p-2 main span-10 bg-light'>
+            <div class='main span-10 bg-primary'>
+                <div class="bg-primary position-relative" style="width:500px;height:500px">
+
+                    <div class="position-absolute b-0 b-sm-6 bg-secondary" style="width:100px;height:100px"></div>
+
+                    <div class="position-absolute bg-trimary" style="width:100px;height:100px"></div>
+                </div>
+
+            </div>
+
+<pre class="language-html">
+<code>
+    &lt;div class=&quot;bg-primary position-relative&quot; style=&quot;width:500px;height:500px&quot;&gt;
+        &lt;div class=&quot;position-absolute b-0 b-sm-6 bg-secondary&quot; style=&quot;width:100px;height:100px&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;position-absolute bg-trimary&quot; style=&quot;width:100px;height:100px&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+</code>
+</pre>
+
+
+        </div>
+
+
+
+    </div>
+
+    <script src="js/plugins/prism.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+// Responsive displays
+@each $name,
+$dimensions in $breakpoints {
+  @include respond-to($name) {
+
+        @if($name=='xs') {
+        $name: "";
+        }
+
+        @else {
+        $name: "-#{$name}"
+        }
+        
+        @each $val in $displays {
+            .d#{$name}-#{$val} { display: $val !important; }
+        }
+
+    }
+}

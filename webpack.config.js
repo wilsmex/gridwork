@@ -3,16 +3,16 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     devServer: {
-        contentBase: path.resolve(__dirname,'demo'),
+        contentBase: path.resolve(__dirname,'docs'),
         compress:true,
-        publicPath: "demo",
+        publicPath: "docs",
         writeToDisk:true
     },
     entry: './src/js/app.js',
     output:{
         filename: 'app.js',
-        path: path.resolve(__dirname, 'demo/js'),
-        publicPath: 'demo'
+        path: path.resolve(__dirname, 'docs/js'),
+        publicPath: 'docs'
     },
     module:{
         rules:[
@@ -24,16 +24,6 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader'
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options:{
-                            plugins: function() {
-                                return [
-                                    require('autoprefixer')
-                                ];
-                            }
-                        }
                     },
                     {
                         loader: 'sass-loader'
@@ -52,16 +42,13 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
+            { test: /\.html$/, use: ['html-loader?interpolate'] }
         ]
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: '../css/app.css'
-        }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
         })
     ]
 }

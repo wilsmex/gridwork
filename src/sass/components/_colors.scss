@@ -1,0 +1,5 @@
+@each $size, $val in $semis{
+    .transparent-#{$size}{
+        color:$val;
+    }
+}

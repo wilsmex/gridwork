@@ -1,0 +1,32 @@
+$media_queries: (
+	'xl'	: "only screen and (min-width: "+map-get($breakpoints, 'xl')+"px)",
+	'lg'		: "only screen and (min-width: "+(map-get($breakpoints, 'lg')+1) +"px)",
+	'md'		: "only screen and (min-width: "+(map-get($breakpoints, 'md')+1) +"px)",
+	'sm'		: "only screen and (min-width: "+(map-get($breakpoints, 'sm')+1) +"px)",
+	'xs'	: "" // xs is default css with no media query (mobile first approach)
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+	// If the key exists in the map
+	@if map-has-key($media_queries, $breakpoint) {
+		// xs is default css and doesn't get wrapped in a media query
+		@if	$breakpoint == 'xs'{
+			@content;
+		}
+		@else {
+			// Prints a media query based on the value
+			@media #{inspect(map-get($media_queries, $breakpoint))} {
+				@content;
+			}
+		}
+	}
+   
+	// If the key doesn't exist in the map
+	@else {
+	  @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		  + "Available breakpoints are: #{map-keys($media_queries)}.";
+	}
+  }

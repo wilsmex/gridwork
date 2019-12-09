@@ -1,0 +1,34 @@
+@each $position in $positions {
+    .position-#{$position} {
+        position: $position !important;
+    }
+}
+
+
+// Reponsive Positioning Values
+@each $name,
+$dimensions in $breakpoints {
+    @include respond-to($name) {
+
+        @if($name=='xs') {
+            $name: "";
+        }
+
+        @else {
+            $name: "-#{$name}"
+        }
+
+        // Margin and Padding
+        @each $prop,
+        $abbrev in (top: t, right: r, bottom: b, left: l) {
+
+            @each $size,
+            $length in $spacers {
+                .#{$abbrev}#{$name}-#{$size} {
+                    #{$prop}: $length !important;
+                }
+            }
+        }
+    }
+
+}

@@ -1,4 +1,86 @@
-$app-font-serif: "Times";
-$app-font-sans-serif: "Verdana";
-$primary-hex: #00A0FF;
-$sidebar-color: #2a4f69;
+// Variables should follow the `$property-size` formula
+
+//Global Sizes
+$columnCount: 12 !default; // how many columns classes will be generated
+$sizingCount: 6 !default; // how many sizing classes will be generated (font-sizes,colors,margins,paddings,gaps,etc)
+$sizingUpperLimit: 3rem;
+$breakpoints: ("xs":0,"sm": 480, "md": 768, "lg": 992, "xl": 1366) !default;
+
+// COLORS
+$semis:(
+    0:rgba(0,0,0,0), // fully transparent
+    100: rgba(0,0,0,1) // fully opaque
+  ) !default;
+
+  @for $i from 1 through $sizingCount {
+    $rgba_gray: rgba(0,0,0,(1/$sizingCount*$i));
+    $semis: map-merge($semis, ($i: $rgba_gray)); // as map-merge is immutable, we assign merge results to same spacers var
+  }
+
+$theme:(
+    "primary": #007bff,
+    "secondary": #adb5bd,
+    "trimary": #17a2b8,
+    "ok": #28a745,
+    "info": #20c997,
+    "warn": #ffc107,
+    "risk": #dc3545,
+    "light": #e9ecef,
+    "dark": #6c757d,
+    "white":#fff,
+    "black": #000,
+    "transparent": rgba(0,0,0,0)
+  ) !default;
+
+// Grid
+$gridColumns: 1,2,3,4,5,6,7,8,9,10,11,12;
+
+$spacer: 1rem !default;
+$spacers: 
+  (
+    0: 0,
+  ) !default;
+
+$increase: $sizingUpperLimit / $sizingCount;
+@for $i from 1 through $sizingCount {
+      $spacers: map-merge($spacers, ($i: $increase*$i)); // as map-merge is immutable, we assign merge results to same spacers var
+}
+
+$gridGaps: () !default;
+$gridGaps: map-merge($gridGaps,$spacers); // grid gaps have same spacing as default spacers
+
+$fontSizes: () !default;
+//Font Sizes
+@for $i from 1 through $sizingCount {
+  $fontSizes: map-merge($fontSizes, ($i: $increase*$i)); // as map-merge is immutable, we assign merge results to same spacers var
+}
+
+// Font Weights
+$fontWeights:(
+'thin',
+'extra-light',
+'light',
+'normal',
+'medium',
+'semi-bold',
+'bold',
+'extra-bold',
+'ultra-bold'
+) !default;
+
+//Font Families
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+
+// Shadow Spacing
+$shadow_transparency: .15 !default;
+$shadows: () !default;
+$shadows: map-merge($shadows,$spacers); // shadows have same spacing as default spacers
+
+
+// Utils
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default; // grid is built into grid system
+$overflows: auto, hidden !default;
+$positions: static, relative, absolute, fixed, sticky !default;

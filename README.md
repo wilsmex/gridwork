@@ -1,12 +1,17 @@
-# HQ Admin - Free Responsive Bootstrap Admin Template
+# GridWork - Free CSS Grid Based CSS Framework
+GridWork is a WIP free css framework based off of the CSS grid authored by https://YouTube.com/FollowAndrew  It's a utility framework, that can be thought of as a mix of bootstrap and tailwind.  The framework grid system is based off of the CSS grid, allowing you to create multi-columns layouts by delcaring the columns on the parent container!  
 
-HQ Admin is a free responsive admin template based off of Bootstrap 4.  This admin template was created by Andrew (https://youtube.com/FollowAndrew) as part of a free video tutorial for FreeCodeCamp.org.  
+It's fully responsive with 4 breakpoints used throught.  All of the sizing (fonts,spacing,padding,margin, etc.) are based of a (customizable SASS variable) 6 point system.  This allows you do do all sorts of things such as:
 
-See the video tutorial for a full 3-hour breakdown of creating this entire theme from scratch!  
+```
+<div class="p-1 m-6">Content</div>
+<div class="grid gap-sm-1 gap-lg-4">Content</div>
+<h1 class="font-sm-3 font-lg-6">Heading</h1>
+```
 
 ## Getting Started
 
-Download the .zip and open the '/demo' folder to see all distribution files
+Download the .zip and open the '/docs' folder to see all distribution files
 
 To install dependencies run the following command from the hq-admin folder:
 ```
@@ -20,7 +25,7 @@ npm run start:dev
 ```
 
 ## Versions
-* 0.1
+* 0.1 alpha
   * Released: Oct. 4, 2019
   * Initial release
 

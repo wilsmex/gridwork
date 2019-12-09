@@ -1,0 +1,67 @@
+@each $name,
+$dimensions in $breakpoints {
+  @include respond-to($name) {
+
+    @if($name=='xs') {
+      $name: "";
+    }
+
+    @else {
+      $name: "-#{$name}"
+    }
+
+    // Margin and Padding
+    @each $prop,
+    $abbrev in (margin: m, padding: p) {
+
+      @each $size,
+      $length in $spacers {
+        .#{$abbrev}#{$name}-#{$size} {
+          #{$prop}: $length !important;
+        }
+
+        .#{$abbrev}t#{$name}-#{$size},
+        .#{$abbrev}y#{$name}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+
+        .#{$abbrev}r#{$name}-#{$size},
+        .#{$abbrev}x#{$name}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+
+        .#{$abbrev}b#{$name}-#{$size},
+        .#{$abbrev}y#{$name}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+
+        .#{$abbrev}l#{$name}-#{$size},
+        .#{$abbrev}x#{$name}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
+    // Grid Gap
+    @each $size,
+    $length in $gridGaps {
+      .grid {
+        &.gap#{$name}-#{$size} {
+          grid-gap: $length !important;
+        }
+      }
+    }
+    // Font Size
+    @each $size,
+    $length in $fontSizes {
+
+      .font#{$name}-#{$size} {
+        font-size: $length !important;
+        line-height: $length !important;
+      }
+
+    }
+  }
+
+
+
+}

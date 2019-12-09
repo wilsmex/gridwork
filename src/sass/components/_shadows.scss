@@ -1,0 +1,6 @@
+
+@each $size, $val in $shadows{
+    .shadow-#{$size}{
+        box-shadow: 0 $val $val*2 rgba(black, $shadow_transparency);
+    }
+}

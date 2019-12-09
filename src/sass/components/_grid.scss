@@ -1,0 +1,62 @@
+
+.grid{
+    display:grid;
+
+    &.auto-flow--column{
+        grid-auto-flow:column;
+    }
+    &.auto-flow--row{
+        grid-auto-flow:row;
+    }
+    &.auto-flow--dense{
+        grid-auto-flow: dense;
+    }
+    
+
+    // ******************** //
+	// columns
+	// ******************** //
+
+	@each $column in $gridColumns{
+        &.cols-#{$column}{
+            grid-template-columns: repeat($column, 1fr);
+                &.max-content{
+                    grid-template-columns: repeat($column, max-content);
+                }
+                &.min-content{
+                    grid-template-columns: repeat($column, min-content);
+                }
+        }
+
+        // span
+        
+        .span-#{$column}{
+            grid-column: span $column;
+        }
+        .col-start-#{$column}{
+            grid-column-start: $column;
+        }
+        .col-end-#{$column}{
+            grid-column-end: $column;
+        }
+    }
+    .span-full{
+        grid-column: 1 / -1;
+    }
+    @each $name, $dimensions in $breakpoints {
+        @include respond-to($name){
+            @each $column in $gridColumns{
+                &.cols-#{$name}-#{$column}{
+                    grid-template-columns: repeat($column, 1fr);
+                }               
+            }
+        } 
+        &.fixed-#{$name}{
+            max-width:#{$dimensions}px;
+            margin:0 auto;
+        }
+    }
+
+    
+
+}

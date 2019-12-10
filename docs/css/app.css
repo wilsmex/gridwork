@@ -728,6 +728,42 @@ template {
 .transparent-6 {
   color: black; }
 
+.border-primary {
+  background-color: #00aeef !important; }
+
+.border-secondary {
+  background-color: #adb5bd !important; }
+
+.border-trimary {
+  background-color: #17a2b8 !important; }
+
+.border-ok {
+  background-color: #28a745 !important; }
+
+.border-info {
+  background-color: #20c997 !important; }
+
+.border-warn {
+  background-color: #ffc107 !important; }
+
+.border-risk {
+  background-color: #dc3545 !important; }
+
+.border-light {
+  background-color: #e9ecef !important; }
+
+.border-dark {
+  background-color: #6c757d !important; }
+
+.border-white {
+  background-color: #fff !important; }
+
+.border-black {
+  background-color: #000 !important; }
+
+.border-transparent {
+  background-color: rgba(0, 0, 0, 0) !important; }
+
 .shadow-0 {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.15); }
 
@@ -1983,9 +2019,6 @@ template {
 .text-monospace {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important; }
 
-.text-justify {
-  text-align: justify !important; }
-
 .text-wrap {
   white-space: normal !important; }
 
@@ -2006,13 +2039,18 @@ template {
 .text-center {
   text-align: center !important; }
 
+.text-justify {
+  text-align: justify !important; }
+
 @media only screen and (min-width: 481px) {
   .text-sm-left {
     text-align: left !important; }
   .text-sm-right {
     text-align: right !important; }
   .text-sm-center {
-    text-align: center !important; } }
+    text-align: center !important; }
+  .text-sm-justify {
+    text-align: justify !important; } }
 
 @media only screen and (min-width: 769px) {
   .text-md-left {
@@ -2020,7 +2058,9 @@ template {
   .text-md-right {
     text-align: right !important; }
   .text-md-center {
-    text-align: center !important; } }
+    text-align: center !important; }
+  .text-md-justify {
+    text-align: justify !important; } }
 
 @media only screen and (min-width: 993px) {
   .text-lg-left {
@@ -2028,7 +2068,9 @@ template {
   .text-lg-right {
     text-align: right !important; }
   .text-lg-center {
-    text-align: center !important; } }
+    text-align: center !important; }
+  .text-lg-justify {
+    text-align: justify !important; } }
 
 @media only screen and (min-width: 1366px) {
   .text-xl-left {
@@ -2036,7 +2078,9 @@ template {
   .text-xl-right {
     text-align: right !important; }
   .text-xl-center {
-    text-align: center !important; } }
+    text-align: center !important; }
+  .text-xl-justify {
+    text-align: justify !important; } }
 
 .text-lowercase {
   text-transform: lowercase !important; }
@@ -2048,40 +2092,40 @@ template {
   text-transform: capitalize !important; }
 
 .weight-thin {
-  font-weight: "thin" !important; }
+  font-weight: 100 !important; }
 
 .weight-extra-light {
-  font-weight: "extra-light" !important; }
+  font-weight: 200 !important; }
 
 .weight-light {
-  font-weight: "light" !important; }
+  font-weight: 300 !important; }
 
 .weight-normal {
-  font-weight: "normal" !important; }
+  font-weight: 400 !important; }
 
 .weight-medium {
-  font-weight: "medium" !important; }
+  font-weight: 500 !important; }
 
 .weight-semi-bold {
-  font-weight: "semi-bold" !important; }
+  font-weight: 600 !important; }
 
 .weight-bold {
-  font-weight: "bold" !important; }
+  font-weight: 700 !important; }
 
 .weight-extra-bold {
-  font-weight: "extra-bold" !important; }
+  font-weight: 800 !important; }
 
 .weight-ultra-bold {
-  font-weight: "ultra-bold" !important; }
+  font-weight: 900 !important; }
 
-.font-italic {
+.text-italic {
   font-style: italic !important; }
 
 .text-white {
   color: #fff !important; }
 
 .text-primary {
-  color: #007bff !important; }
+  color: #00aeef !important; }
 
 .text-secondary {
   color: #adb5bd !important; }
@@ -2565,7 +2609,7 @@ template {
     left: 3rem !important; } }
 
 .bg-primary {
-  background-color: #007bff !important; }
+  background-color: #00aeef !important; }
 
 .bg-secondary {
   background-color: #adb5bd !important; }

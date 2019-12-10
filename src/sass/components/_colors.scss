@@ -1,5 +1,13 @@
+// Transparent
 @each $size, $val in $semis{
     .transparent-#{$size}{
         color:$val;
     }
 }
+
+// Borders
+  @each $color, $val in $theme {
+    .border-#{$color}{
+      background-color:$val !important;
+    } 
+  }

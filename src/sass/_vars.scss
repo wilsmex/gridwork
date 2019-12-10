@@ -18,7 +18,7 @@ $semis:(
   }
 
 $theme:(
-    "primary": #007bff,
+    "primary": #00aeef,
     "secondary": #adb5bd,
     "trimary": #17a2b8,
     "ok": #28a745,
@@ -57,15 +57,15 @@ $fontSizes: () !default;
 
 // Font Weights
 $fontWeights:(
-'thin',
-'extra-light',
-'light',
-'normal',
-'medium',
-'semi-bold',
-'bold',
-'extra-bold',
-'ultra-bold'
+'thin': 100,
+'extra-light': 200,
+'light': 300,
+'normal': 400,
+'medium': 500,
+'semi-bold': 600,
+'bold': 700,
+'extra-bold':800,
+'ultra-bold':900
 ) !default;
 
 //Font Families

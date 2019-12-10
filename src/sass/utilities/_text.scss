@@ -2,7 +2,6 @@
 .text-monospace { font-family: $font-family-monospace !important; }
 
 // Alignment
-.text-justify  { text-align: justify !important; }
 .text-wrap     { white-space: normal !important; }
 .text-nowrap   { white-space: nowrap !important; }
 .text-truncate { 
@@ -26,6 +25,7 @@ $dimensions in $breakpoints {
         .text#{$name}-left   { text-align: left !important; }
         .text#{$name}-right  { text-align: right !important; }
         .text#{$name}-center { text-align: center !important; }
+        .text#{$name}-justify { text-align: justify !important; }
     }
 }
 
@@ -35,14 +35,15 @@ $dimensions in $breakpoints {
 .text-capitalize { text-transform: capitalize !important; }
 
 // Weights
-@each $val in $fontWeights{
+@each $val,
+$dimensions in $fontWeights{
     .weight-#{$val}{
-        font-weight:$val !important;
+        font-weight:$dimensions !important;
     }
 }
 
 // Italic
-.font-italic         { font-style: italic !important; }
+.text-italic         { font-style: italic !important; }
 
 // Contextual colors
 .text-white { color: #fff !important; }

@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GridWork - Install</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link href="css/prism.css" rel="stylesheet" />
+</head>
+
+<body class="app">
+    <div class="grid cols-12 fixed-xl">
+        <header class="span-full bg-primary p-5">
+            <img src="img/logo.png" alt="gridwork logo" width="452"  />
+            GridWork - A CSS Grid Based CSS Framework.
+        </header>
+        <nav class='span-2 bg-light mr-2'>
+            <ul class=''>
+                <li><a href="install.html">Install</a></li>
+                <li><a href="index.html">Grid</a></li>
+                <li><a href="colors.html">Colors</a></li>
+                <li><a href="fonts.html">Fonts</a></li>
+                <li><a href="spacing.html">Spacing</a></li>
+                <li><a href="shadows.html">Shadows</a></li>
+                <li><a href="positioning.html">Positioning</a></li>
+            </ul>
+        </nav>
+        <div class='p-2 main span-10 bg-light'>
+
+                <p>GridWork is a WIP free css framework based off of the CSS grid authored by <a href="https://YouTube.com/FollowAndrew">FollowAndrew</a>  It's a utility framework, that can be thought of as a mix of bootstrap and tailwind.  The framework grid system is based off of the CSS grid, allowing you to create multi-columns layouts by delcaring the columns on the parent container!  </p>
+
+                <p>It's fully responsive with 4 breakpoints used throught.  All of the sizing (fonts,spacing,padding,margin, etc.) are based of a (customizable SASS variable) 6 point system.  This allows you do do all sorts of things such as:</p>
+                
+<pre class="language-html">
+<code>
+&lt;div class=&quot;p-1 m-6&quot;&gt;Content&lt;/div&gt;
+&lt;div class=&quot;grid gap-sm-1 gap-lg-4&quot;&gt;Content&lt;/div&gt;
+&lt;h1 class=&quot;font-sm-3 font-lg-6&quot;&gt;Heading&lt;/h1&gt;
+</code>
+</pre>
+                
+                <h2>Getting Started</h2>
+                
+                Download the <a href="https://github.com/wilsmex/gridwork">GridWord .zip</a> from GitHub and open the '/docs' folder to see all distribution files
+                
+                To install dependencies run the following command from the hq-admin folder:
+<pre class="language-html">
+<code>npm install</code>
+</pre>
+                
+                then to initialize the dev server and have webpack create the necessary files run:
+                
+<pre class="language-html">
+<code>npm run start:dev</code>
+</pre>
+
+        <p>Customize the /sass/_vars.scss as needed.</p>
+        <p>Add any custom css to the /sass/_customize.scss</p>
+        </div>
+
+    </div>
+
+    <script src="js/plugins/prism.js"></script>
+</body>
+
+</html>
